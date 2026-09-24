@@ -305,10 +305,7 @@ function Contact() {
               Thank you for reaching out.
             </p>
 
-            <p className="success-subtext">
-              I’ll review your message and get back to you
-              within <strong>3–5 working days.</strong>
-            </p>
+          
 
             <button
               type="button"
