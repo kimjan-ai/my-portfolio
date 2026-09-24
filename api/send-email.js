@@ -27,24 +27,26 @@ export default async function handler(req, res) {
 
     // Send email
     const { data, error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["kjanclaveria@protonmail.com"],
-      replyTo: email,
-      subject: `Portfolio Contact: ${subject}`,
-      html: `
-        <h2>New Portfolio Contact Message</h2>
+  from: "Portfolio Contact <onboarding@resend.dev>",
+  to: ["kim.jan151999@gmail.com"],
+  replyTo: email,
+  subject: `Portfolio Contact: ${subject}`,
+  html: `
+    <h2>New Portfolio Contact Message</h2>
 
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+    <p><strong>Name:</strong> ${name}</p>
 
-        <hr>
+    <p><strong>Email:</strong> ${email}</p>
 
-        <p><strong>Message:</strong></p>
+    <p><strong>Subject:</strong> ${subject}</p>
 
-        <p>${message.replace(/\n/g, "<br>")}</p>
-      `,
-    });
+    <hr>
+
+    <p><strong>Message:</strong></p>
+
+    <p>${message.replace(/\n/g, "<br>")}</p>
+  `,
+});
 
     if (error) {
       console.error("Resend error:", error);
