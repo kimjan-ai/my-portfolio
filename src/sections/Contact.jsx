@@ -1,7 +1,69 @@
+import { useState } from "react";
+
 function Contact() {
+  // Store the form values
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  // Store sending/status messages
+  const [status, setStatus] = useState("");
+  const [sending, setSending] = useState(false);
+
+  // Update form fields
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  // Send the form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setSending(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setStatus("Message sent successfully!");
+
+      // Clear the form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus(
+        "Something went wrong. Please try again later."
+      );
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <section id="contact">
-
       <div className="section-container">
 
         {/* Section heading */}
@@ -19,11 +81,13 @@ function Contact() {
           as soon as possible.
         </p>
 
-
         <div className="contact-layout">
 
           {/* Contact Form */}
-          <div className="contact-form">
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+          >
 
             <div className="form-group">
               <label htmlFor="name">
@@ -35,9 +99,11 @@ function Contact() {
                 id="name"
                 name="name"
                 placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
             </div>
-
 
             <div className="form-group">
               <label htmlFor="email">
@@ -49,9 +115,11 @@ function Contact() {
                 id="email"
                 name="email"
                 placeholder="Enter your email"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
             </div>
-
 
             <div className="form-group">
               <label htmlFor="subject">
@@ -63,9 +131,11 @@ function Contact() {
                 id="subject"
                 name="subject"
                 placeholder="What is this about?"
+                value={formData.subject}
+                onChange={handleChange}
+                required
               />
             </div>
-
 
             <div className="form-group">
               <label htmlFor="message">
@@ -77,26 +147,34 @@ function Contact() {
                 name="message"
                 rows="6"
                 placeholder="Write your message..."
+                value={formData.message}
+                onChange={handleChange}
+                required
               ></textarea>
             </div>
 
-
             <button
-              type="button"
+              type="submit"
               className="contact-submit"
+              disabled={sending}
             >
-              Send Message →
+              {sending ? "Sending..." : "Send Message →"}
             </button>
 
-          </div>
+            {/* Success / error message */}
+            {status && (
+              <p className="contact-status">
+                {status}
+              </p>
+            )}
 
+          </form>
 
           {/* Contact Information */}
           <div className="contact-details">
 
             {/* Availability */}
             <div className="contact-availability">
-
               <h3>
                 Currently Available
               </h3>
@@ -106,13 +184,10 @@ function Contact() {
                 and collaborations. Response time is usually
                 within 24 hours.
               </p>
-
             </div>
-
 
             {/* Email */}
             <div className="contact-detail">
-
               <h3>
                 Email
               </h3>
@@ -120,13 +195,10 @@ function Contact() {
               <a href="mailto:kjanclaveria@protonmail.com">
                 kjanclaveria@protonmail.com
               </a>
-
             </div>
-
 
             {/* GitHub */}
             <div className="contact-detail">
-
               <h3>
                 GitHub
               </h3>
@@ -138,13 +210,10 @@ function Contact() {
               >
                 GitHub Profile →
               </a>
-
             </div>
-
 
             {/* LinkedIn */}
             <div className="contact-detail">
-
               <h3>
                 LinkedIn
               </h3>
@@ -156,13 +225,10 @@ function Contact() {
               >
                 LinkedIn Profile →
               </a>
-
             </div>
-
 
             {/* Location */}
             <div className="contact-detail">
-
               <h3>
                 Based In
               </h3>
@@ -170,13 +236,10 @@ function Contact() {
               <strong>
                 Iloilo, Philippines 🇵🇭
               </strong>
-
             </div>
-
 
             {/* Timezone */}
             <div className="contact-detail">
-
               <h3>
                 Timezone
               </h3>
@@ -184,7 +247,6 @@ function Contact() {
               <strong>
                 GMT+8 (PHT)
               </strong>
-
             </div>
 
           </div>
@@ -192,10 +254,8 @@ function Contact() {
         </div>
 
       </div>
-
     </section>
   );
 }
 
 export default Contact;
-
