@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function Contact() {
-  // Store the form values
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,13 +8,28 @@ function Contact() {
     message: "",
   });
 
-  // Store sending/status messages
-  const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
-
-  // Control the success popup
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
+  // Close popup and return to Contact section
+  const handlePopupClose = () => {
+    setShowSuccess(false);
+    setShowError(false);
+    setErrorMessage("");
+
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  
   // Update form fields
   const handleChange = (e) => {
     setFormData({
@@ -24,12 +38,14 @@ function Contact() {
     });
   };
 
-  // Send the form
+  // Submit contact form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setSending(true);
-    setStatus("");
+    setShowSuccess(false);
+    setShowError(false);
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/send-email", {
@@ -40,13 +56,21 @@ function Contact() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      let data = {};
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to send message.");
+      try {
+        data = await response.json();
+      } catch {
+        data = {};
       }
 
-      // Clear the form after successful submission
+      if (!response.ok) {
+        throw new Error(
+          data.error || "Failed to send your message."
+        );
+      }
+
+      // Clear form after successful submission
       setFormData({
         name: "",
         email: "",
@@ -56,27 +80,15 @@ function Contact() {
 
       // Show success popup
       setShowSuccess(true);
-
-      // Automatically return to Contact section
-      setTimeout(() => {
-        setShowSuccess(false);
-
-        const contactSection =
-          document.getElementById("contact");
-
-        if (contactSection) {
-          contactSection.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      }, 4500);
-
     } catch (error) {
-      console.error(error);
+      console.error("Contact form error:", error);
 
-      setStatus(
-        "Something went wrong. Please try again later."
+      setErrorMessage(
+        error.message ||
+          "Something went wrong. Please try again later."
       );
+
+      setShowError(true);
     } finally {
       setSending(false);
     }
@@ -86,7 +98,6 @@ function Contact() {
     <section id="contact">
       <div className="section-container">
 
-        {/* Section heading */}
         <p className="section-label">
           GET IN TOUCH
         </p>
@@ -181,19 +192,11 @@ function Contact() {
               {sending ? "Sending..." : "Send Message →"}
             </button>
 
-            {/* Error message */}
-            {status && (
-              <p className="contact-status">
-                {status}
-              </p>
-            )}
-
           </form>
 
-          {/* Contact Information */}
+          {/* Contact Details */}
           <div className="contact-details">
 
-            {/* Availability */}
             <div className="contact-availability">
               <h3>
                 Currently Available
@@ -206,7 +209,6 @@ function Contact() {
               </p>
             </div>
 
-            {/* Email */}
             <div className="contact-detail">
               <h3>
                 Email
@@ -217,7 +219,6 @@ function Contact() {
               </a>
             </div>
 
-            {/* GitHub */}
             <div className="contact-detail">
               <h3>
                 GitHub
@@ -232,7 +233,6 @@ function Contact() {
               </a>
             </div>
 
-            {/* LinkedIn */}
             <div className="contact-detail">
               <h3>
                 LinkedIn
@@ -247,7 +247,6 @@ function Contact() {
               </a>
             </div>
 
-            {/* Location */}
             <div className="contact-detail">
               <h3>
                 Based In
@@ -258,7 +257,6 @@ function Contact() {
               </strong>
             </div>
 
-            {/* Timezone */}
             <div className="contact-detail">
               <h3>
                 Timezone
@@ -270,21 +268,15 @@ function Contact() {
             </div>
 
           </div>
-
         </div>
-
       </div>
 
-      {/* =========================================
-          SUCCESS POPUP
-      ========================================= */}
+      {/* SUCCESS POPUP */}
       {showSuccess && (
         <div className="success-overlay">
+          <div className="success-popup success">
 
-          <div className="success-popup">
-
-            {/* Animated green check */}
-            <div className="success-check">
+            <div className="popup-icon success-icon">
               <svg
                 viewBox="0 0 52 52"
                 aria-hidden="true"
@@ -305,7 +297,6 @@ function Contact() {
               </svg>
             </div>
 
-            {/* Success message */}
             <h3>
               Message sent successfully!
             </h3>
@@ -319,17 +310,68 @@ function Contact() {
               within <strong>3–5 working days.</strong>
             </p>
 
-            {/* Countdown/progress */}
-            <div className="success-progress">
-              <span></span>
-            </div>
-
-            <small>
-              Returning to Contact...
-            </small>
+            <button
+              type="button"
+              className="popup-ok-button"
+              onClick={handlePopupClose}
+            >
+              OK
+            </button>
 
           </div>
+        </div>
+      )}
 
+      {/* ERROR POPUP */}
+      {showError && (
+        <div className="success-overlay">
+          <div className="success-popup error">
+
+            <div className="popup-icon error-icon">
+              <svg
+                viewBox="0 0 52 52"
+                aria-hidden="true"
+              >
+                <circle
+                  className="error-circle"
+                  cx="26"
+                  cy="26"
+                  r="24"
+                  fill="none"
+                />
+
+                <path
+                  className="error-line error-line-one"
+                  fill="none"
+                  d="M16 16l20 20"
+                />
+
+                <path
+                  className="error-line error-line-two"
+                  fill="none"
+                  d="M36 16L16 36"
+                />
+              </svg>
+            </div>
+
+            <h3>
+              Message could not be sent
+            </h3>
+
+            <p className="error-subtext">
+              {errorMessage ||
+                "Something went wrong. Please try again later."}
+            </p>
+
+            <button
+              type="button"
+              className="popup-ok-button"
+              onClick={handlePopupClose}
+            >
+              OK
+            </button>
+
+          </div>
         </div>
       )}
 
