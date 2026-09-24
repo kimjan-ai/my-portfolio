@@ -1,4 +1,3 @@
-
 /* =========================================================
    GOOGLE FONT
 ========================================================= */
@@ -14,15 +13,11 @@
   --bg-main: #ffffff;
   --bg-section: #f7f7f7;
   --bg-card: #ffffff;
-
   --text-main: #222222;
   --text-secondary: #555555;
-
   --border-color: #dddddd;
-
   --button-bg: #222222;
   --button-text: #ffffff;
-
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 18px 40px rgba(0, 0, 0, 0.14);
 
@@ -62,18 +57,13 @@
   --bg-main: #0c0c0c;
   --bg-section: #121212;
   --bg-card: #171717;
-
   --text-main: #f5f5f5;
   --text-secondary: #bdbdbd;
-
   --border-color: #303030;
-
   --button-bg: #f5f5f5;
   --button-text: #101010;
-
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   --shadow-hover: 0 18px 45px rgba(0, 0, 0, 0.5);
-
   --name-color-1: #ffffff;
   --name-color-2: #cccccc;
   --name-glow: rgba(255, 255, 255, 0.3);
@@ -166,11 +156,9 @@ section > div {
 
 .section-label {
   margin: 0 0 16px;
-
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2.5px;
-
   color: #000000;
   text-transform: uppercase;
 }
@@ -192,6 +180,7 @@ section > div {
   padding: 14px 24px;
 
   border-radius: 6px;
+
   text-decoration: none;
 
   font-size: 15px;
@@ -226,6 +215,7 @@ nav {
   padding: 20px 8%;
 
   background: rgba(255, 255, 255, 0.92);
+
   border-bottom: 1px solid var(--border-color);
 
   backdrop-filter: blur(12px);
@@ -262,6 +252,7 @@ nav h2 {
   content: "";
 
   position: absolute;
+
   left: 0;
   bottom: 0;
 
@@ -323,6 +314,7 @@ nav h2 {
   justify-content: center;
 
   background: #ff7a00;
+
   color: #ffffff;
 
   border-radius: 50%;
@@ -350,6 +342,7 @@ nav h2 {
   transform: translateX(26px);
 
   background: #ff7a00;
+
   color: #ffffff;
 
   box-shadow:
@@ -377,7 +370,6 @@ nav h2 {
 .about-container {
   width: 100%;
   max-width: 1200px;
-
   margin: 0 auto;
 }
 
@@ -390,7 +382,9 @@ nav h2 {
   min-height: 680px;
 
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   align-items: center;
 
   gap: 70px;
@@ -417,6 +411,7 @@ nav h2 {
   display: inline-block;
 
   margin: 0 0 22px;
+
   padding: 6px 11px;
 
   font-size: 15px;
@@ -455,9 +450,11 @@ nav h2 {
   margin: 0 0 24px;
 
   font-size: clamp(64px, 11vw, 92px);
+
   line-height: 1;
 
   letter-spacing: -3px;
+
   font-weight: 700;
 }
 
@@ -524,6 +521,7 @@ nav h2 {
 
   border: none;
   border-radius: 0;
+
   box-shadow: none;
 
   transition: transform 0.4s ease-in-out;
@@ -556,6 +554,7 @@ nav h2 {
 
   border: none;
   border-radius: 0;
+
   box-shadow: none;
 
   overflow: visible;
@@ -586,10 +585,12 @@ nav h2 {
 
 .about-role {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
   flex-wrap: wrap;
+
   gap: 8px;
 
   margin: 20px 0 14px;
@@ -602,6 +603,7 @@ nav h2 {
   font-weight: 700;
 
   color: var(--text-main);
+
   background: var(--bg-card);
 
   border: 1px solid var(--border-color);
@@ -668,6 +670,7 @@ nav h2 {
   font-weight: 700;
 
   color: #ff7a00;
+
   -webkit-text-fill-color: #ff7a00;
 
   text-shadow:
@@ -709,6 +712,7 @@ nav h2 {
 
 .about-hero-buttons {
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -744,6 +748,7 @@ nav h2 {
 
 .primary-btn {
   background: #000000;
+
   color: #ffffff;
 
   border: 2px solid #000000;
@@ -789,6 +794,7 @@ nav h2 {
 
 .about-hero-buttons .secondary-btn {
   color: var(--text-main);
+
   background: transparent;
 
   border: 1px solid var(--neon-orange);
@@ -850,6 +856,7 @@ nav h2 {
 
 .about-stats.stats-visible .about-stat {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -901,10 +908,10 @@ nav h2 {
 
   font-size: 11px;
   line-height: 1.5;
-
   font-weight: 600;
 
   text-transform: uppercase;
+
   letter-spacing: 0.8px;
 
   color: var(--text-secondary);
@@ -927,6 +934,7 @@ nav h2 {
 
 .stat-card {
   position: relative;
+
   isolation: isolate;
 
   padding: 28px 20px;
@@ -936,6 +944,7 @@ nav h2 {
   background: var(--bg-card);
 
   border: 1px solid var(--border-color);
+
   border-radius: 14px;
 
   box-shadow: var(--shadow);
@@ -949,6 +958,7 @@ nav h2 {
   content: "";
 
   position: absolute;
+
   inset: -2px;
 
   border-radius: 16px;
@@ -978,6 +988,7 @@ nav h2 {
 
 .stat-card:hover::before {
   opacity: 0.35;
+
   transform: scale(1);
 }
 
@@ -1069,6 +1080,7 @@ nav h2 {
   margin-bottom: 16px;
 
   font-size: 16px;
+
   line-height: 1.8;
 
   color: var(--text-secondary);
@@ -1144,6 +1156,7 @@ nav h2 {
   width: 100%;
 
   padding-left: 42px;
+
   padding-bottom: 10px;
 }
 
@@ -1153,6 +1166,7 @@ nav h2 {
   position: absolute;
 
   left: 10px;
+
   top: 15px;
   bottom: 15px;
 
@@ -1306,6 +1320,7 @@ nav h2 {
   margin-bottom: 6px;
 
   font-size: 10px;
+
   font-weight: 800;
 
   letter-spacing: 1.5px;
@@ -1317,6 +1332,7 @@ nav h2 {
   margin: 0 0 6px;
 
   font-size: 18px;
+
   line-height: 1.35;
 
   color: var(--text-main);
@@ -1326,6 +1342,7 @@ nav h2 {
   margin: 0 0 10px;
 
   font-size: 12px;
+
   font-weight: 600;
 
   color: var(--text-secondary);
@@ -1335,6 +1352,7 @@ nav h2 {
   margin: 0;
 
   font-size: 12px;
+
   line-height: 1.6;
 
   color: var(--text-secondary);
@@ -1342,6 +1360,7 @@ nav h2 {
 
 .roadmap-tags {
   display: flex;
+
   flex-wrap: wrap;
 
   gap: 6px;
@@ -1353,6 +1372,7 @@ nav h2 {
   padding: 5px 8px;
 
   font-size: 9px;
+
   font-weight: 700;
 
   color: var(--text-secondary);
@@ -1414,6 +1434,7 @@ nav h2 {
   margin: 0 0 14px;
 
   font-size: 14px;
+
   font-weight: 800;
 
   letter-spacing: 2px;
@@ -1442,6 +1463,7 @@ nav h2 {
   min-height: 52px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -1456,6 +1478,7 @@ nav h2 {
   color: var(--text-main);
 
   font-size: 12px;
+
   font-weight: 700;
 
   text-align: center;
@@ -1537,6 +1560,7 @@ nav h2 {
 
 .about-tech-list .tool-placeholder {
   font-size: 20px;
+
   font-weight: 800;
 
   color: #ff7a00;
@@ -1688,6 +1712,7 @@ nav h2 {
 
 .project-technologies {
   display: flex;
+
   flex-wrap: wrap;
 
   gap: 8px;
@@ -1703,6 +1728,7 @@ nav h2 {
   border-radius: 20px;
 
   font-size: 13px;
+
   font-weight: 500;
 }
 
@@ -1724,6 +1750,7 @@ nav h2 {
   text-decoration: none;
 
   font-size: 14px;
+
   font-weight: 500;
 
   transition:
@@ -1786,6 +1813,7 @@ nav h2 {
 
 .form-group {
   display: flex;
+
   flex-direction: column;
 
   margin-bottom: 22px;
@@ -1795,6 +1823,7 @@ nav h2 {
   margin-bottom: 8px;
 
   font-size: 14px;
+
   font-weight: 600;
 }
 
@@ -1805,6 +1834,7 @@ nav h2 {
   padding: 14px 16px;
 
   font-family: "Montserrat", sans-serif;
+
   font-size: 15px;
 
   color: var(--text-main);
@@ -1827,6 +1857,7 @@ nav h2 {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: var(--text-secondary);
+
   opacity: 0.75;
 }
 
@@ -1856,6 +1887,7 @@ nav h2 {
   font-family: "Montserrat", sans-serif;
 
   font-size: 15px;
+
   font-weight: 600;
 
   color: #ffffff;
@@ -1910,6 +1942,7 @@ nav h2 {
 
 .contact-details {
   display: flex;
+
   flex-direction: column;
 
   gap: 20px;
@@ -1935,6 +1968,7 @@ nav h2 {
   margin: 0;
 
   font-size: 15px;
+
   line-height: 1.7;
 
   color: var(--text-secondary);
@@ -1950,6 +1984,7 @@ nav h2 {
   margin: 0 0 8px;
 
   font-size: 15px;
+
   font-weight: 600;
 }
 
@@ -1981,18 +2016,19 @@ nav h2 {
 }
 
 
-
 /* =========================================================
    CONTACT SUCCESS / ERROR POPUP
 ========================================================= */
 
 .success-overlay {
   position: fixed;
+
   inset: 0;
 
   z-index: 9999;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -2021,9 +2057,11 @@ nav h2 {
   text-align: center;
 
   border: 1px solid rgba(255, 255, 255, 0.25);
+
   border-radius: 24px;
 
-  background: var(--bg-card);
+  /* Always white */
+  background: #ffffff;
 
   box-shadow:
     0 25px 70px rgba(0, 0, 0, 0.25);
@@ -2064,6 +2102,7 @@ nav h2 {
   stroke-width: 2;
 
   stroke-dasharray: 150;
+
   stroke-dashoffset: 150;
 
   animation:
@@ -2079,6 +2118,7 @@ nav h2 {
   stroke-linejoin: round;
 
   stroke-dasharray: 50;
+
   stroke-dashoffset: 50;
 
   animation:
@@ -2108,6 +2148,7 @@ nav h2 {
   stroke-width: 2;
 
   stroke-dasharray: 150;
+
   stroke-dashoffset: 150;
 
   animation:
@@ -2122,6 +2163,7 @@ nav h2 {
   stroke-linecap: round;
 
   stroke-dasharray: 30;
+
   stroke-dashoffset: 30;
 }
 
@@ -2155,16 +2197,18 @@ nav h2 {
 .success-popup h3 {
   margin-bottom: 12px;
 
-  color: var(--text-main);
+  color: #222222;
 
   font-size: 20px;
+
   font-weight: 800;
 }
 
 .success-popup > p {
-  color: var(--text-secondary);
+  color: #555555;
 
   font-size: 13px;
+
   line-height: 1.6;
 }
 
@@ -2173,13 +2217,13 @@ nav h2 {
 
   margin: 8px auto 0;
 
-  color: var(--text-secondary);
+  color: #555555;
 
   font-size: 12px;
 }
 
 .success-subtext strong {
-  color: var(--text-main);
+  color: #222222;
 }
 
 .error-subtext {
@@ -2187,7 +2231,7 @@ nav h2 {
 
   margin: 0 auto;
 
-  color: var(--text-secondary);
+  color: #555555;
 
   font-size: 12px;
 
@@ -2203,6 +2247,7 @@ nav h2 {
   position: relative;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -2213,17 +2258,14 @@ nav h2 {
 
   padding: 0;
 
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  /* White button with black border */
+  border: 2px solid #222222;
+
   border-radius: 14px;
 
-  color: var(--text-main);
+  color: #222222;
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.42),
-      rgba(255, 255, 255, 0.14)
-    );
+  background: #ffffff;
 
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.65),
@@ -2236,6 +2278,7 @@ nav h2 {
   font-family: "Montserrat", sans-serif;
 
   font-size: 14px;
+
   font-weight: 700;
 
   cursor: pointer;
@@ -2248,7 +2291,9 @@ nav h2 {
 }
 
 
-/* Glass reflection */
+/* =========================================================
+   GLASS REFLECTION
+========================================================= */
 
 .popup-ok-button::before {
   content: "";
@@ -2270,57 +2315,108 @@ nav h2 {
 }
 
 
-/* Hover */
+/* =========================================================
+   OK BUTTON HOVER
+   NEON ORANGE / YELLOW
+========================================================= */
 
 .popup-ok-button:hover {
-  transform: translateY(-2px) scale(1.02);
+  transform:
+    translateY(-2px)
+    scale(1.02);
 
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: #ff6500;
+
+  color: #111111;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.52),
-      rgba(255, 255, 255, 0.20)
+      90deg,
+      #ff4500 0%,
+      #ff6500 28%,
+      #ff9d00 55%,
+      #ffd000 78%,
+      #ffff00 100%
     );
 
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.75),
-    0 12px 30px rgba(0, 0, 0, 0.18);
+    0 0 8px rgba(255, 69, 0, 0.35),
+    0 0 18px rgba(255, 157, 0, 0.25);
 }
 
 
-/* Click */
+/* =========================================================
+   CLICK
+========================================================= */
 
 .popup-ok-button:active {
-  transform: translateY(0) scale(0.98);
+  transform:
+    translateY(0)
+    scale(0.98);
 }
+
 
 /* =========================================================
    DARK MODE POPUP
+   POPUP REMAINS WHITE
 ========================================================= */
 
 [data-theme="dark"] .success-popup {
-  background: #171717;
-  border-color: #303030;
+  background: #ffffff;
+
+  border-color: rgba(255, 255, 255, 0.25);
 
   box-shadow:
     0 25px 70px rgba(0, 0, 0, 0.65);
 }
 
 [data-theme="dark"] .success-popup h3 {
-  color: #f5f5f5;
+  color: #222222;
 }
 
 [data-theme="dark"] .success-popup > p,
 [data-theme="dark"] .success-subtext,
 [data-theme="dark"] .error-subtext {
-  color: #bdbdbd;
+  color: #555555;
 }
 
 [data-theme="dark"] .success-subtext strong {
-  color: #ffffff;
+  color: #222222;
 }
+
+
+/* =========================================================
+   DARK MODE OK BUTTON
+========================================================= */
+
+[data-theme="dark"] .popup-ok-button {
+  background: #ffffff;
+
+  border-color: #222222;
+
+  color: #222222;
+}
+
+[data-theme="dark"] .popup-ok-button:hover {
+  background:
+    linear-gradient(
+      90deg,
+      #ff4500 0%,
+      #ff6500 28%,
+      #ff9d00 55%,
+      #ffd000 78%,
+      #ffff00 100%
+    );
+
+  border-color: #ff6500;
+
+  color: #111111;
+
+  box-shadow:
+    0 0 8px rgba(255, 69, 0, 0.35),
+    0 0 18px rgba(255, 157, 0, 0.25);
+}
+
 
 /* =========================================================
    POPUP ANIMATION
@@ -2390,16 +2486,16 @@ nav h2 {
     height: 44px;
   }
 }
+
+
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-
 }
 
 
@@ -2410,12 +2506,14 @@ nav h2 {
 @media (max-width: 768px) {
 
   /* General sections */
+
   section {
     padding: 70px 20px;
   }
 
 
   /* Navigation */
+
   nav {
     flex-direction: column;
 
@@ -2434,6 +2532,7 @@ nav h2 {
 
 
   /* About hero */
+
   .about-hero {
     min-height: auto;
 
@@ -2452,6 +2551,7 @@ nav h2 {
 
   .about-hero-description {
     margin-left: auto;
+
     margin-right: auto;
   }
 
@@ -2467,24 +2567,29 @@ nav h2 {
 
 
   /* 3D profile */
+
   .about-hero-image {
     width: 320px;
+
     height: 320px;
   }
 
   .profile-3d {
     width: 320px;
+
     height: 320px;
   }
 
 
   /* Roles */
+
   .about-role {
     gap: 5px 15px;
   }
 
 
   /* Typing */
+
   .about-typing {
     font-size: 13px;
 
@@ -2493,12 +2598,14 @@ nav h2 {
 
 
   /* Hero buttons */
+
   .about-hero-buttons {
     margin-bottom: 0;
   }
 
 
   /* About stats */
+
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
 
@@ -2533,6 +2640,7 @@ nav h2 {
 
 
   /* Summary */
+
   .about-summary,
   .about-journey {
     padding: 70px 20px;
@@ -2545,6 +2653,7 @@ nav h2 {
 
 
   /* Journey */
+
   .journey-layout {
     grid-template-columns: 1fr;
 
@@ -2563,6 +2672,7 @@ nav h2 {
     left: -32px;
 
     width: 10px;
+
     height: 10px;
   }
 
@@ -2570,11 +2680,13 @@ nav h2 {
     left: -33px;
 
     width: 13px;
+
     height: 13px;
   }
 
 
   /* Tools */
+
   .journey-tools-panel {
     padding: 22px;
   }
@@ -2596,6 +2708,7 @@ nav h2 {
 
 
   /* Skills */
+
   #skills h2,
   #projects h2,
   #contact h2 {
@@ -2612,6 +2725,7 @@ nav h2 {
 
 
   /* Projects */
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -2622,6 +2736,7 @@ nav h2 {
 
 
   /* Contact */
+
   .contact-layout {
     grid-template-columns: 1fr;
 
@@ -2640,6 +2755,7 @@ nav h2 {
 
 
   /* Popup */
+
   .success-popup {
     width: 420px;
 
@@ -2647,7 +2763,6 @@ nav h2 {
 
     padding: 38px 28px;
   }
-
 }
 
 
@@ -2658,10 +2773,12 @@ nav h2 {
 @media (max-width: 500px) {
 
   /* About hero */
+
   .about-hero {
     gap: 40px;
 
     padding-left: 16px;
+
     padding-right: 16px;
   }
 
@@ -2677,24 +2794,29 @@ nav h2 {
 
 
   /* 3D profile */
+
   .about-hero-image {
     width: 270px;
+
     height: 270px;
   }
 
   .profile-3d {
     width: 270px;
+
     height: 270px;
   }
 
 
   /* Roles */
+
   .about-role span {
     font-size: 11px;
   }
 
 
   /* Hero buttons */
+
   .about-hero-buttons {
     flex-direction: column;
 
@@ -2709,6 +2831,7 @@ nav h2 {
 
 
   /* About stats */
+
   .about-stats {
     grid-template-columns: 1fr;
 
@@ -2743,6 +2866,7 @@ nav h2 {
 
 
   /* Roadmap */
+
   .journey-roadmap {
     padding-left: 30px;
   }
@@ -2777,6 +2901,7 @@ nav h2 {
 
 
   /* Tools */
+
   .journey-tools-panel {
     padding: 18px;
   }
@@ -2796,6 +2921,7 @@ nav h2 {
 
 
   /* Projects */
+
   .project-content {
     padding: 20px;
   }
@@ -2812,6 +2938,7 @@ nav h2 {
 
 
   /* Navigation */
+
   nav h2 {
     font-size: 20px;
   }
@@ -2822,6 +2949,7 @@ nav h2 {
 
 
   /* Contact */
+
   .contact-layout {
     gap: 35px;
   }
@@ -2836,6 +2964,7 @@ nav h2 {
 
 
   /* Success popup */
+
   .success-overlay {
     padding: 16px;
   }
@@ -2852,6 +2981,7 @@ nav h2 {
 
   .success-check {
     width: 70px;
+
     height: 70px;
 
     margin-bottom: 18px;
@@ -2859,6 +2989,7 @@ nav h2 {
 
   .success-check svg {
     width: 70px;
+
     height: 70px;
   }
 
@@ -2873,7 +3004,6 @@ nav h2 {
   .success-progress {
     margin-top: 24px;
   }
-
 }
 
 
@@ -2882,7 +3012,6 @@ nav h2 {
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -2894,106 +3023,4 @@ nav h2 {
 
     transition-duration: 0.01ms !important;
   }
-
-}
-
-/* =========================================================
-   COLOR ONLY — POPUP
-========================================================= */
-
-/* Popup stays white in both modes */
-.success-popup {
-  background: #ffffff;
-}
-
-/* Popup text */
-.success-popup h3 {
-  color: #222222;
-}
-
-.success-popup > p,
-.success-subtext,
-.error-subtext {
-  color: #555555;
-}
-
-.success-subtext strong {
-  color: #222222;
-}
-
-
-/* =========================================================
-   OK BUTTON — WHITE + BLACK BORDER
-========================================================= */
-
-.popup-ok-button {
-  background: #ffffff;
-  border: 2px solid #222222;
-  color: #222222;
-}
-
-
-/* =========================================================
-   OK BUTTON — NEON ORANGE/YELLOW WHEN HOVERED
-========================================================= */
-
-.popup-ok-button:hover {
-  background: linear-gradient(
-    90deg,
-    #ff4500 0%,
-    #ff6500 28%,
-    #ff9d00 55%,
-    #ffd000 78%,
-    #ffff00 100%
-  );
-
-  border-color: #ff6500;
-  color: #111111;
-
-  box-shadow:
-    0 0 8px rgba(255, 69, 0, 0.35),
-    0 0 18px rgba(255, 157, 0, 0.25);
-}
-
-
-/* =========================================================
-   DARK MODE — POPUP STILL WHITE
-========================================================= */
-
-[data-theme="dark"] .success-popup {
-  background: #ffffff;
-}
-
-[data-theme="dark"] .success-popup h3 {
-  color: #222222;
-}
-
-[data-theme="dark"] .success-popup > p,
-[data-theme="dark"] .success-subtext,
-[data-theme="dark"] .error-subtext {
-  color: #555555;
-}
-
-[data-theme="dark"] .success-subtext strong {
-  color: #222222;
-}
-
-[data-theme="dark"] .popup-ok-button {
-  background: #ffffff;
-  border-color: #222222;
-  color: #222222;
-}
-
-[data-theme="dark"] .popup-ok-button:hover {
-  background: linear-gradient(
-    90deg,
-    #ff4500 0%,
-    #ff6500 28%,
-    #ff9d00 55%,
-    #ffd000 78%,
-    #ffff00 100%
-  );
-
-  border-color: #ff6500;
-  color: #111111;
 }
