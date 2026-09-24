@@ -2010,7 +2010,260 @@ nav h2 {
 .contact-detail strong {
   font-size: 15px;
 }
+/* =========================================
+   SUCCESS POPUP
+========================================= */
 
+.success-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: successFade 0.3s ease;
+}
+
+
+/* Popup box */
+
+.success-popup {
+  width: 420px;
+  max-width: 100%;
+
+  padding: 42px 32px;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.35);
+
+  animation: successPopup 0.45s ease;
+}
+
+
+/* =========================================
+   GREEN CHECK
+========================================= */
+
+.success-check {
+  width: 82px;
+  height: 82px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-check svg {
+  width: 82px;
+  height: 82px;
+}
+
+
+/* Circle animation */
+
+.success-circle {
+  stroke: #22c55e;
+  stroke-width: 3;
+
+  stroke-dasharray: 151;
+  stroke-dashoffset: 151;
+
+  animation: drawCircle 0.7s ease forwards;
+}
+
+
+/* Check animation */
+
+.success-checkmark {
+  stroke: #22c55e;
+  stroke-width: 4;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+
+  animation: drawCheck 0.45s 0.6s ease forwards;
+}
+
+
+/* =========================================
+   SUCCESS TEXT
+========================================= */
+
+.success-popup h3 {
+  margin: 0 0 12px;
+
+  font-size: 1.45rem;
+  font-weight: 700;
+
+  color: #171717;
+}
+
+.success-popup p {
+  margin: 5px 0;
+
+  color: #555;
+
+  font-size: 0.98rem;
+
+  line-height: 1.6;
+}
+
+.success-subtext {
+  margin-top: 6px !important;
+}
+
+.success-subtext strong {
+  color: #171717;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.success-progress {
+  width: 100%;
+  height: 3px;
+
+  margin: 28px 0 12px;
+
+  overflow: hidden;
+
+  background: #e5e5e5;
+
+  border-radius: 20px;
+}
+
+.success-progress span {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    #22c55e,
+    #86efac
+  );
+
+  transform-origin: left;
+
+  animation: successProgress 4.5s linear forwards;
+}
+
+
+/* Return text */
+
+.success-popup small {
+  color: #888;
+
+  font-size: 0.78rem;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes successFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes successPopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+@keyframes successProgress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .success-popup {
+    padding: 35px 24px;
+
+    border-radius: 18px;
+  }
+
+  .success-check {
+    width: 70px;
+    height: 70px;
+  }
+
+  .success-check svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .success-popup h3 {
+    font-size: 1.25rem;
+  }
+
+  .success-popup p {
+    font-size: 0.9rem;
+  }
+}
 
 /* =========================================================
    FOOTER

@@ -13,6 +13,9 @@ function Contact() {
   const [status, setStatus] = useState("");
   const [sending, setSending] = useState(false);
 
+  // Control the success popup
+  const [showSuccess, setShowSuccess] = useState(false);
+
   // Update form fields
   const handleChange = (e) => {
     setFormData({
@@ -43,8 +46,6 @@ function Contact() {
         throw new Error(data.error || "Failed to send message.");
       }
 
-      setStatus("Message sent successfully!");
-
       // Clear the form after successful submission
       setFormData({
         name: "",
@@ -52,8 +53,27 @@ function Contact() {
         subject: "",
         message: "",
       });
+
+      // Show success popup
+      setShowSuccess(true);
+
+      // Automatically return to Contact section
+      setTimeout(() => {
+        setShowSuccess(false);
+
+        const contactSection =
+          document.getElementById("contact");
+
+        if (contactSection) {
+          contactSection.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 4500);
+
     } catch (error) {
       console.error(error);
+
       setStatus(
         "Something went wrong. Please try again later."
       );
@@ -161,7 +181,7 @@ function Contact() {
               {sending ? "Sending..." : "Send Message →"}
             </button>
 
-            {/* Success / error message */}
+            {/* Error message */}
             {status && (
               <p className="contact-status">
                 {status}
@@ -254,6 +274,65 @@ function Contact() {
         </div>
 
       </div>
+
+      {/* =========================================
+          SUCCESS POPUP
+      ========================================= */}
+      {showSuccess && (
+        <div className="success-overlay">
+
+          <div className="success-popup">
+
+            {/* Animated green check */}
+            <div className="success-check">
+              <svg
+                viewBox="0 0 52 52"
+                aria-hidden="true"
+              >
+                <circle
+                  className="success-circle"
+                  cx="26"
+                  cy="26"
+                  r="24"
+                  fill="none"
+                />
+
+                <path
+                  className="success-checkmark"
+                  fill="none"
+                  d="M14 27l7 7 17-17"
+                />
+              </svg>
+            </div>
+
+            {/* Success message */}
+            <h3>
+              Message sent successfully!
+            </h3>
+
+            <p>
+              Thank you for reaching out.
+            </p>
+
+            <p className="success-subtext">
+              I’ll review your message and get back to you
+              within <strong>3–5 working days.</strong>
+            </p>
+
+            {/* Countdown/progress */}
+            <div className="success-progress">
+              <span></span>
+            </div>
+
+            <small>
+              Returning to Contact...
+            </small>
+
+          </div>
+
+        </div>
+      )}
+
     </section>
   );
 }
