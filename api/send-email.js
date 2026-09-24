@@ -11,12 +11,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const {
-      name,
-      email,
-      subject,
-      message,
-    } = req.body;
+    const { name, email, subject, message } = req.body;
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
@@ -25,28 +20,28 @@ export default async function handler(req, res) {
       });
     }
 
-    // Send email
+    // Send email using Resend
     const { data, error } = await resend.emails.send({
-  from: "Portfolio Contact <onboarding@resend.dev>",
-  to: ["kim.jan151999@gmail.com"],
-  replyTo: email,
-  subject: `Portfolio Contact: ${subject}`,
-  html: `
-    <h2>New Portfolio Contact Message</h2>
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: ["kim.jan151999@gmail.com"],
+      replyTo: email,
+      subject: `Portfolio Contact: ${subject}`,
+      html: `
+        <h2>New Portfolio Contact Message</h2>
 
-    <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Name:</strong> ${name}</p>
 
-    <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Email:</strong> ${email}</p>
 
-    <p><strong>Subject:</strong> ${subject}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
 
-    <hr>
+        <hr>
 
-    <p><strong>Message:</strong></p>
+        <p><strong>Message:</strong></p>
 
-    <p>${message.replace(/\n/g, "<br>")}</p>
-  `,
-});
+        <p>${message.replace(/\n/g, "<br>")}</p>
+      `,
+    });
 
     if (error) {
       console.error("Resend error:", error);
@@ -61,7 +56,6 @@ export default async function handler(req, res) {
       message: "Email sent successfully.",
       data,
     });
-
   } catch (error) {
     console.error("Server error:", error);
 
